@@ -1,5 +1,5 @@
 ---
-title: "Connect AI Tools to Company Brain via MCP"
+title: "How Company Brain Delivers Context via MCP to AI Tools"
 sidebarTitle: "MCP Overview"
 description: "The Model Context Protocol (MCP) is how Company Brain delivers your company knowledge to AI tools. Learn how the connector works and how to set it up."
 ---
@@ -10,7 +10,7 @@ The Model Context Protocol (MCP) is an open standard for connecting AI tools to 
 
 <Steps>
   <Step title="Your Company Facts are stored in Company Brain">
-    Curators review and approve facts so only accurate, up-to-date knowledge reaches your AI tools. Facts with **Live** status are served through the MCP endpoint; drafts and pending-review facts are excluded.
+    Curators review and approve facts so only accurate, up-to-date knowledge reaches your AI tools. Facts with **Live** status are served through the MCP endpoint; facts in **Draft** or **Submitted for Review** status are excluded.
   </Step>
   <Step title="Company Brain exposes your private MCP endpoint">
     Each organisation gets a unique endpoint at `https://mcp.company-brain.ai/YOUR_ORG_ID`. Your API key is embedded in the URL, so no additional authentication configuration is required.
@@ -67,7 +67,7 @@ Your MCP endpoint URL contains your organisation's API key as part of the path â
 </Accordion>
 
 <Accordion title="AI isn't using my Company Facts">
-  Your facts must have a status of **Live** before they are served through the MCP endpoint. Facts in **Draft** or **Pending Review** status are not included. Open the Company Facts section of your dashboard, filter by status, and confirm your key facts have been approved and published.
+  Your facts must have a status of **Live** before they are served through the MCP endpoint. Facts in **Draft** or **Submitted for Review** status are not included. Open the Company Facts section of your dashboard, filter by status, and confirm your key facts have been approved and published.
 </Accordion>
 
 <Accordion title="Only some of my facts are being used">

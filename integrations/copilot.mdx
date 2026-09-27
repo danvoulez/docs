@@ -1,5 +1,5 @@
 ---
-title: "Connect Company Brain to GitHub Copilot"
+title: "Connect Company Brain to GitHub Copilot Chat via MCP"
 sidebarTitle: "Copilot"
 description: "Add Company Brain as an MCP server in VS Code or JetBrains so GitHub Copilot Chat answers questions using your company's knowledge base."
 ---
@@ -58,6 +58,16 @@ GitHub Copilot Chat in VS Code supports MCP servers, which means you can give Co
 ## JetBrains Setup
 
 JetBrains IDEs — including IntelliJ IDEA, PyCharm, and WebStorm — support MCP configuration through the GitHub Copilot plugin settings. The setup flow varies by IDE version, so refer to [GitHub's official Copilot documentation](https://docs.github.com/en/copilot) for the exact steps for your IDE. The MCP endpoint URL you'll need is the same one from your Company Brain dashboard.
+
+## Testing the Connection
+
+Once Company Brain is connected, open the **GitHub Copilot Chat** panel in VS Code and ask a question that only your Company Facts can answer, for example:
+
+- *"What naming conventions does our team use?"*
+- *"What is our policy on third-party dependencies?"*
+- *"What is our company's brand voice?"*
+
+Copilot Chat should respond with specifics drawn from your knowledge base rather than a generic answer. If it can't find the information, check that the relevant facts have **Live** status in your Company Brain dashboard — facts in **Draft** or **Submitted for Review** status are not served through the MCP endpoint.
 
 ## Useful Copilot Prompts
 

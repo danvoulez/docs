@@ -1,5 +1,5 @@
 ---
-title: "Add Company Brain Context to Cursor"
+title: "Connect Company Brain to Cursor with Native MCP Support"
 sidebarTitle: "Cursor"
 description: "Configure Company Brain as an MCP server in Cursor so the AI has full knowledge of your company's codebase conventions, brand, and policies."
 ---
@@ -60,6 +60,16 @@ You can commit `.cursor/mcp.json` to your repository so that every developer on 
 <Tip>
   Add a short note to your project's `README.md` explaining that the repo includes a Company Brain MCP configuration and that teammates need a Company Brain account to use it. Link to your Company Brain onboarding instructions so new developers can get up and running quickly.
 </Tip>
+
+## Testing the Connection
+
+Once Company Brain is configured, open Cursor Chat (`Cmd+L` on Mac or `Ctrl+L` on Windows and Linux) and ask a question that only your Company Facts can answer, for example:
+
+- *"What is our company's brand voice?"*
+- *"What are our coding conventions for this project?"*
+- *"What's our standard error response format?"*
+
+Cursor should respond with specifics drawn from your knowledge base rather than a generic answer. If Cursor can't find the information, verify that the relevant facts have **Live** status in your Company Brain dashboard — facts in **Draft** or **Submitted for Review** status are not served through the MCP endpoint.
 
 ## Practical Examples
 
