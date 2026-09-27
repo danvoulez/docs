@@ -1,0 +1,80 @@
+---
+title: "Add Company Brain Context to Cursor"
+sidebarTitle: "Cursor"
+description: "Configure Company Brain as an MCP server in Cursor so the AI has full knowledge of your company's codebase conventions, brand, and policies."
+---
+
+Cursor has first-class MCP support, making it one of the easiest AI tools to connect to Company Brain. Once configured, every Cursor AI interaction — inline edits, Chat, and Composer — can reference your company's coding standards, documentation style, and internal policies. Your team stops re-explaining context in every session, and Cursor's suggestions stay consistent with how your company actually works.
+
+## Prerequisites
+
+<Note>
+  Before you begin, make sure you have:
+  - A Company Brain account on any plan
+  - Cursor installed (any version with MCP support — see **Cursor > About** to confirm your version)
+  - Your MCP endpoint URL, found in **Settings > MCP Connector** in your Company Brain dashboard
+</Note>
+
+## Setup
+
+<Steps>
+  <Step title="Open Cursor Settings">
+    In Cursor, open Settings with `Cmd+,` on Mac or `Ctrl+,` on Windows and Linux.
+  </Step>
+  <Step title="Navigate to MCP Servers">
+    In the Settings panel, select **Features** from the left-hand menu, then scroll down to **MCP Servers**.
+  </Step>
+  <Step title="Add Company Brain as an MCP server">
+    Click **Add MCP Server** and fill in the following fields:
+
+    | Field | Value |
+    |---|---|
+    | Name | `company-brain` |
+    | URL | `https://mcp.company-brain.ai/YOUR_ORG_ID` |
+    | Transport | HTTP |
+
+    Replace `YOUR_ORG_ID` with the identifier from your Company Brain dashboard.
+  </Step>
+  <Step title="Save and restart Cursor">
+    Click **Save**. If Cursor prompts you to restart, do so now — MCP server configuration takes effect on the next launch.
+
+    Alternatively, you can add the configuration directly by creating or editing `.cursor/mcp.json` in your project root:
+
+    ```json .cursor/mcp.json
+    {
+      "mcpServers": {
+        "company-brain": {
+          "url": "https://mcp.company-brain.ai/YOUR_ORG_ID",
+          "transport": "http"
+        }
+      }
+    }
+    ```
+  </Step>
+</Steps>
+
+## Team-Wide Configuration
+
+You can commit `.cursor/mcp.json` to your repository so that every developer on the team automatically gets Company Brain context in their Cursor setup. When a teammate clones the repo, Cursor picks up the MCP configuration without any manual steps on their part.
+
+<Tip>
+  Add a short note to your project's `README.md` explaining that the repo includes a Company Brain MCP configuration and that teammates need a Company Brain account to use it. Link to your Company Brain onboarding instructions so new developers can get up and running quickly.
+</Tip>
+
+## Practical Examples
+
+Try these prompts in Cursor Chat or Composer once Company Brain is connected:
+
+```text
+Write a commit message following our conventions.
+```
+
+```text
+Add error handling that matches our error response format.
+```
+
+```text
+Draft a PR description in our team's style.
+```
+
+Each of these prompts triggers Cursor to retrieve the relevant Company Facts — commit message format, error handling patterns, PR description templates — and apply them directly, so the output is consistent with your team's standards from the first draft.

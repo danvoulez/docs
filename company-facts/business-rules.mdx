@@ -1,0 +1,99 @@
+---
+title: "Encode Business Rules and Policies as Company Facts"
+sidebarTitle: "Business Rules"
+description: "Store pricing rules, approval thresholds, compliance requirements, and standard operating procedures as Company Facts so AI always applies them correctly."
+---
+
+Business rules are one of the most powerful categories of Company Facts you can build. When your AI tools know your policies — discount thresholds, payment terms, compliance requirements, escalation paths — they automatically apply them in every proposal, email, contract, and analysis they help produce. Instead of a sales rep having to remember the approval threshold before quoting a discount, the AI flags it automatically. Instead of a new hire guessing at standard payment terms, the AI gets them right every time.
+
+## Types of Business Rules to Encode
+
+Any rule your team needs to apply consistently is a good candidate for a Company Fact. Start with the four categories that tend to have the highest impact.
+
+<CardGroup cols={2}>
+  <Card title="Pricing & Discounts" icon="tag">
+    Encode the rules your team uses when building quotes and proposals. Examples: "Discounts above 15% require manager approval" or "Bundle pricing is available for three or more products." These facts prevent rogue discounting and keep AI-generated quotes on policy.
+  </Card>
+  <Card title="Payment Terms" icon="credit-card">
+    Store your standard and exception terms so AI tools apply the right conditions in every contract and invoice. Examples: "Standard terms are net-30" or "Net-60 terms require sign-off from Finance." AI-drafted contracts will include the correct terms without manual review.
+  </Card>
+  <Card title="Compliance & Legal" icon="scale-balanced">
+    Capture mandatory clauses, required addenda, and regulatory obligations. Examples: "All contracts with EU customers must include a GDPR data processing addendum" or "Statements of Work must reference the Master Services Agreement by date." These facts reduce legal risk in AI-assisted drafting.
+  </Card>
+  <Card title="Escalation Rules" icon="arrow-up-right">
+    Document how and when issues should escalate so AI tools can guide customers and team members correctly. Examples: "Support issues unresolved after 48 hours escalate to the account manager" or "Billing disputes over €500 are handled by the Finance team, not Support."
+  </Card>
+</CardGroup>
+
+## Writing Policy Facts
+
+Policy facts follow the same structure as all Company Facts — title, category, and content — but they reward extra precision. Include the specific thresholds, timeframes, and responsible parties that make a rule actionable.
+
+Here are three examples you can adapt for your own policies:
+
+```
+Title:    Discount Approval Threshold
+Category: Policies & Rules
+Content:  Discounts up to 10% can be approved by any account executive.
+          Discounts between 10% and 20% require sales manager approval.
+          Discounts above 20% require VP of Sales sign-off. All approved
+          discounts must be logged in the CRM before the quote is sent
+          to the prospect.
+```
+
+```
+Title:    Standard Payment Terms
+Category: Policies & Rules
+Content:  Standard payment terms are net-30 from invoice date. Net-60
+          terms are available for enterprise accounts but require written
+          approval from the Finance team before inclusion in a contract.
+          Early payment discounts (2/10 net-30) may be offered at the
+          account executive's discretion.
+```
+
+```
+Title:    GDPR Data Processing Addendum Requirement
+Category: Policies & Rules
+Content:  All contracts with customers based in the European Union or
+          European Economic Area must include the current version of our
+          GDPR Data Processing Addendum (DPA). The DPA must be referenced
+          by name and version number in the main contract body. Contact
+          legal@company.com for the current DPA template.
+```
+
+<Tip>
+  When writing compliance facts, name the responsible person or team explicitly. "Contact legal@company.com" is more useful to an AI (and to your team) than "consult the appropriate team." Specificity makes the fact actionable.
+</Tip>
+
+## Keeping Rules Current
+
+Policy facts are only as valuable as they are accurate. An AI that confidently applies a discount rule that changed three months ago can damage customer relationships and create internal confusion.
+
+<Warning>
+  Outdated policy facts are worse than no facts. If the AI applies incorrect rules in customer-facing proposals or contracts, it can create commitments your company didn't intend to make. Review policy facts whenever you update an internal process, pricing structure, or legal requirement — don't wait for the annual knowledge base audit.
+</Warning>
+
+To keep your policy facts current:
+
+- **Assign category ownership.** Designate a Curator for each policy area — Sales Operations owns pricing rules, Finance owns payment terms, Legal owns compliance requirements. Each Curator is responsible for keeping their category accurate.
+- **Trigger a review on change.** Whenever a policy changes, the team member who owns that change should also update (or submit for update) the relevant Company Fact before the new policy goes live.
+- **Use the weekly digest.** Pro and Team plan subscribers receive a weekly digest of all knowledge base changes. Use this to catch updates that affect your area without having to check the dashboard manually.
+
+## Strategy Facts
+
+Company Brain also supports strategy-level context, and this is worth encoding even if it feels less concrete than a pricing rule. When your AI tools understand your quarterly priorities, target market, and growth direction, they frame every piece of output — proposals, analyses, email replies, internal documents — in alignment with where your business is actually heading.
+
+A well-placed strategy fact can shift an AI-drafted executive summary from generic to genuinely useful. Here's an example:
+
+```
+Title:    Q3 Strategic Priority — Upmarket Motion
+Category: Strategy & Goals
+Content:  Our primary objective for Q3 is expanding into the enterprise
+          segment (companies with 200–2,000 employees). All proposals,
+          case studies, and outbound messaging this quarter should
+          emphasise security, compliance, and team-scale features.
+          Deals below €10,000 ACV should be deprioritised in favour of
+          larger-opportunity accounts.
+```
+
+Add strategy facts at the start of each quarter and archive the previous quarter's facts once they're superseded. This keeps the AI oriented toward your current direction without the clutter of outdated goals.

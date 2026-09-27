@@ -1,0 +1,89 @@
+---
+title: "Company Facts: Building Your AI Knowledge Base"
+sidebarTitle: "Overview"
+description: "Company Facts are the curated knowledge Company Brain delivers to your AI tools. Learn what facts are, how they're organized, and how to manage them."
+---
+
+Company Facts are the foundation of everything Company Brain does. Each fact is a discrete, curated piece of company knowledge — a product name, a pricing rule, a tone guideline, a strategic priority — that your AI tools can look up and apply when generating responses. Instead of pasting background context into every chat session, you define it once as a Company Fact, and Company Brain delivers it automatically to Claude, ChatGPT, Copilot, Cursor, and any MCP-compatible client your team uses.
+
+## What Is a Company Fact?
+
+A Company Fact is a short, focused statement of truth about your company. Each fact has four fields: a **title** that identifies it, **content** that expresses the knowledge, a **category** that organizes it, and a **status** that tracks where it is in the review process.
+
+Keep each fact tightly scoped. One fact should answer one question. The more specific and self-contained a fact is, the more reliably AI tools can retrieve and apply it.
+
+Here's what a Company Fact looks like:
+
+```
+Title:    Brand Voice
+Category: Brand & Communication
+Content:  Our tone is professional but approachable. We avoid jargon
+          and write in plain language. We're confident without being
+          arrogant. We use "we" and "you" to stay conversational.
+Status:   Live
+```
+
+## Fact Categories
+
+Company Brain organizes facts into four main categories. Assign each fact to the category that best describes the type of knowledge it encodes.
+
+<CardGroup cols={2}>
+  <Card title="Products & Services" icon="box">
+    What you sell, how it works, key features, packaging, and pricing. Use this category for anything a customer or prospect might ask about your offering.
+  </Card>
+  <Card title="Brand & Communication" icon="megaphone">
+    Tone of voice, style guidelines, vocabulary preferences, and what to avoid. These facts shape how AI writes on your behalf.
+  </Card>
+  <Card title="Policies & Rules" icon="shield-check">
+    Pricing thresholds, approval requirements, compliance obligations, refund terms, and standard operating procedures. Use this category to encode how your business operates.
+  </Card>
+  <Card title="Strategy & Goals" icon="chart-line">
+    Quarterly priorities, OKRs, target markets, and company direction. These facts help AI frame proposals, analyses, and recommendations in line with where your business is heading.
+  </Card>
+</CardGroup>
+
+## Fact Lifecycle
+
+Every fact moves through a consistent review process before it reaches your AI tools. This ensures that only verified, approved knowledge is delivered to your team's sessions.
+
+<Steps>
+  <Step title="Draft">
+    Create a new fact and give it a title, category, and content. Drafts are visible only to you and your Curators — they haven't been delivered to AI tools yet.
+  </Step>
+  <Step title="Submit for Review">
+    Once you're happy with the content, submit the fact for Curator review. A notification goes to your designated Curators to let them know it's waiting.
+  </Step>
+  <Step title="Curator Approves">
+    A Curator reads the fact, optionally leaves comments or requests edits, and approves it. If the fact needs changes, it returns to Draft with feedback attached.
+  </Step>
+  <Step title="Live">
+    Approved facts go Live and are immediately available across all MCP-connected AI tools for your entire team. No one needs to reconfigure their setup — the context appears automatically.
+  </Step>
+</Steps>
+
+## Managing Your Facts
+
+The **Facts dashboard** is your central workspace for building and maintaining your knowledge base. From here you can:
+
+- **Add a fact** — click "New Fact", fill in the title, category, and content, then save as a Draft or submit straight for review.
+- **Edit a fact** — click any fact to open it. Edits to a Live fact move it back to Pending Review so a Curator can verify the change before it goes live again.
+- **Archive a fact** — when information is no longer current, archive it rather than deleting it. Archived facts are preserved for reference but are no longer delivered to AI tools.
+- **Search facts** — use the search bar at the top of the dashboard to find facts by keyword, title, or category.
+
+<Tip>
+  The search bar searches across both titles and content, so you can find a fact even if you don't remember what you named it. Try searching for a keyword from the fact's content — for example, "refund" or "net-30".
+</Tip>
+
+## Limits by Plan
+
+Each plan includes a different number of active (non-archived) Company Facts. Choose the plan that matches the depth of context your team needs.
+
+| Plan | Fact Limit | Curators |
+|------|-----------|----------|
+| Free | 50 facts | 1 |
+| Pro | 2,000 facts | 5 |
+| Team | 5,000 facts | 25 |
+
+<Note>
+  Archived facts do not count toward your plan limit. If you're approaching your limit, archiving outdated or superseded facts is a quick way to free up space without losing historical context.
+</Note>

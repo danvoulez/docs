@@ -1,0 +1,66 @@
+---
+title: "How Company Brain Delivers Context to AI Tools"
+sidebarTitle: "How It Works"
+description: "Understand how Company Brain's MCP context layer stores your company knowledge and automatically injects it into Claude, ChatGPT, Copilot, and Cursor sessions."
+---
+
+Think of Company Brain as a smart, always-on briefing document that sits between your knowledge base and every AI tool your team uses. When you open Claude, Cursor, or any other MCP-compatible client, Company Brain is already there — silently handing the AI everything it needs to know about your business before you type your first word. No copy-pasting, no re-briefing, no inconsistency across team members.
+
+## The Three Layers
+
+Company Brain's architecture is made up of three distinct layers, each with a clear job.
+
+<CardGroup cols={1}>
+  <Card title="Knowledge Layer" icon="database">
+    Your Company Facts live here — curated, approved, and version-tracked. Every fact goes through a Curator review before it's published, so the knowledge base always reflects what your company actually believes to be true. Think of it as your company's Wikipedia: structured, maintained, and trusted.
+  </Card>
+  <Card title="MCP Connector" icon="plug">
+    A single endpoint URL that implements the open Model Context Protocol standard. AI tools query this endpoint at the start of each session to retrieve the facts most relevant to the conversation. Because MCP is an open standard, any compatible AI client can connect to it — no custom plugin required.
+  </Card>
+  <Card title="AI Tool Integration" icon="robot">
+    Your team configures their AI client once — a single JSON entry pointing to your MCP endpoint URL. After that, every session automatically includes your company context. There's nothing for individual team members to set up or remember.
+  </Card>
+</CardGroup>
+
+## What Happens When You Chat
+
+From your perspective, context delivery is invisible. Here's what happens behind the scenes each time you start a session.
+
+<Steps>
+  <Step title="You open your AI tool and start a new session">
+    You launch Claude, Cursor, Copilot, or another MCP-compatible client just as you normally would. Nothing about your workflow changes.
+  </Step>
+  <Step title="The AI tool calls your Company Brain MCP endpoint">
+    Before your first message is processed, the AI client automatically sends a request to your Company Brain MCP endpoint. This call is handled by the configuration you set up once in your client's config file.
+  </Step>
+  <Step title="Company Brain returns the most relevant Company Facts">
+    Company Brain retrieves the facts most applicable to your session context and returns them to the AI tool in a structured format. Relevance is determined dynamically, so the AI receives the right context for the conversation at hand — not a dump of every fact in your library.
+  </Step>
+  <Step title="The AI responds with full knowledge of your company">
+    With context in hand, the AI answers your question using your company's actual products, tone, policies, and goals. It knows your brand voice. It knows your payment terms. It knows your product names. It knows what you've told it to know.
+  </Step>
+</Steps>
+
+## What the AI Learns
+
+Company Brain organises your knowledge into four categories of Company Facts. Each category covers a different dimension of what makes your company unique.
+
+<Accordion title="Products & Services">
+  The names, descriptions, positioning, and key details of everything your company sells or delivers. This includes product names and versions, feature highlights, target customer profiles, and anything else the AI needs to accurately represent your offering — whether it's writing a product description, answering a support question, or drafting a proposal.
+</Accordion>
+
+<Accordion title="Brand Voice & Tone">
+  The guidelines that define how your company communicates. This covers writing style (formal vs. casual, short sentences vs. long-form), vocabulary preferences, phrases to use or avoid, and the overall personality your brand projects. With these facts in place, AI-generated content reads like it came from your team — not from a generic language model.
+</Accordion>
+
+<Accordion title="Policies & Rules">
+  The operational rules that govern how your business works. Payment terms, refund policies, SLAs, compliance requirements, escalation paths — any rule or constraint that should inform how the AI answers questions or drafts documents on your behalf. These facts are especially valuable for support, sales, and operations teams working from defined playbooks.
+</Accordion>
+
+<Accordion title="Strategy & Goals">
+  The directional context that shapes decisions: current priorities, target markets, growth objectives, positioning against competitors, and anything else that gives the AI a sense of where your company is headed. With strategic context in place, the AI can help with planning, communications, and analysis in a way that's genuinely aligned with your goals — not just generically helpful.
+</Accordion>
+
+<Note>
+  Your Company Facts are **private to your organisation** and are never shared with or visible to other companies using Company Brain. Your MCP endpoint requires authentication and is accessible only to members of your team. Company Brain does not use your facts to train any AI models.
+</Note>

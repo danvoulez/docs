@@ -1,0 +1,75 @@
+---
+title: "Connect AI Tools to Company Brain via MCP"
+sidebarTitle: "MCP Overview"
+description: "The Model Context Protocol (MCP) is how Company Brain delivers your company knowledge to AI tools. Learn how the connector works and how to set it up."
+---
+
+The Model Context Protocol (MCP) is an open standard for connecting AI tools to external context sources. Company Brain uses MCP to expose your curated Company Facts — product details, brand voice, policies, and strategy — through a single private endpoint. You configure that endpoint once per AI client, and every session automatically inherits your company context without any copy-pasting.
+
+## How the MCP Connector Works
+
+<Steps>
+  <Step title="Your Company Facts are stored in Company Brain">
+    Curators review and approve facts so only accurate, up-to-date knowledge reaches your AI tools. Facts with **Live** status are served through the MCP endpoint; drafts and pending-review facts are excluded.
+  </Step>
+  <Step title="Company Brain exposes your private MCP endpoint">
+    Each organisation gets a unique endpoint at `https://mcp.company-brain.ai/YOUR_ORG_ID`. Your API key is embedded in the URL, so no additional authentication configuration is required.
+  </Step>
+  <Step title="You configure your AI tool once">
+    Paste your endpoint URL into your AI client's MCP or connector settings. This is a one-time step — you won't need to repeat it for future sessions.
+  </Step>
+  <Step title="Every new session queries Company Brain automatically">
+    When you start a conversation, your AI tool calls the MCP endpoint and retrieves the facts most relevant to your query before composing a response. Your company context is always present, silently, in the background.
+  </Step>
+</Steps>
+
+## Finding Your MCP Endpoint
+
+Open your Company Brain dashboard and go to **Settings > MCP Connector**. Your unique endpoint URL is displayed at the top of the page — copy it exactly as shown.
+
+Your endpoint follows this format:
+
+```text
+https://mcp.company-brain.ai/YOUR_ORG_ID
+```
+
+Replace `YOUR_ORG_ID` with the identifier shown in your dashboard. The full URL including your org ID is what you paste into each AI tool during setup.
+
+## Supported AI Tools
+
+<CardGroup cols={2}>
+  <Card title="Claude" icon="comment" href="/integrations/claude">
+    Works with Claude Desktop and Claude.ai
+  </Card>
+  <Card title="ChatGPT" icon="robot" href="/integrations/chatgpt">
+    Connect via ChatGPT connectors
+  </Card>
+  <Card title="GitHub Copilot" icon="github" href="/integrations/copilot">
+    Use in VS Code and JetBrains
+  </Card>
+  <Card title="Cursor" icon="code" href="/integrations/cursor">
+    Native MCP support in Cursor
+  </Card>
+</CardGroup>
+
+## Authentication
+
+Your MCP endpoint URL contains your organisation's API key as part of the path — there is no separate token or header to configure. Paste the full URL from your dashboard into your AI client and authentication is handled automatically.
+
+<Note>
+  Keep your MCP endpoint URL private. It acts as both your identifier and your API key. Anyone with the URL can query your Company Facts, so treat it like a password — don't commit it to public repositories or share it in public channels.
+</Note>
+
+## Troubleshooting
+
+<Accordion title="AI tool says it can't reach the MCP endpoint">
+  Check that you copied the endpoint URL exactly as it appears in **Settings > MCP Connector**. A missing character or extra space is the most common cause. Re-copy the URL directly from the dashboard and update your AI client's configuration, then restart the client.
+</Accordion>
+
+<Accordion title="AI isn't using my Company Facts">
+  Your facts must have a status of **Live** before they are served through the MCP endpoint. Facts in **Draft** or **Pending Review** status are not included. Open the Company Facts section of your dashboard, filter by status, and confirm your key facts have been approved and published.
+</Accordion>
+
+<Accordion title="Only some of my facts are being used">
+  The MCP endpoint returns the facts most semantically relevant to each query — it doesn't send your entire knowledge base in every request. If important information is consistently missing, add a more specific fact that covers that topic directly. More precise, focused facts surface more reliably than broad, general ones.
+</Accordion>

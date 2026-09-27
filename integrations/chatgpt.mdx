@@ -1,0 +1,74 @@
+---
+title: "Use Company Brain Context in ChatGPT"
+sidebarTitle: "ChatGPT"
+description: "Connect Company Brain to ChatGPT so every conversation has access to your company facts, brand voice, and policies through the MCP connector."
+---
+
+ChatGPT supports external connectors including MCP-compatible tools, allowing Company Brain to inject your company context directly into ChatGPT conversations. Once the connector is active, ChatGPT can reference your facts, brand voice, and policies automatically — no more pasting company background at the start of every chat.
+
+## Prerequisites
+
+<Note>
+  Before you begin, make sure you have:
+  - A Company Brain account on any plan
+  - A **ChatGPT Plus, Pro, or Team** subscription — connector support is not available on the free tier
+  - Your MCP endpoint URL, found in **Settings > MCP Connector** in your Company Brain dashboard
+</Note>
+
+## Setup Steps
+
+<Steps>
+  <Step title="Open ChatGPT Settings">
+    Sign in to [chatgpt.com](https://chatgpt.com) and click your profile picture in the top-right corner. Select **Settings** from the dropdown menu.
+  </Step>
+  <Step title="Navigate to Connectors or Tools">
+    In the Settings sidebar, look for **Connectors** or **Tools** — the exact label depends on your subscription plan and the current ChatGPT release. Open that section.
+  </Step>
+  <Step title="Add your Company Brain MCP endpoint">
+    Click **Add connector** or **Connect new tool**. When prompted for the endpoint URL, enter:
+
+    ```text
+    https://mcp.company-brain.ai/YOUR_ORG_ID
+    ```
+
+    Replace `YOUR_ORG_ID` with the identifier shown in your Company Brain dashboard under **Settings > MCP Connector**.
+  </Step>
+  <Step title="Authorize the connection">
+    Follow the on-screen prompts to confirm and authorize the connection. ChatGPT will validate that your endpoint is reachable before saving the configuration.
+  </Step>
+  <Step title="Start a new conversation">
+    Open a fresh ChatGPT conversation. Company Brain context is now active. ChatGPT will draw on your Company Facts whenever they are relevant to your query.
+  </Step>
+</Steps>
+
+## Using Context in Conversations
+
+ChatGPT pulls in Company Brain facts automatically when your question or task relates to knowledge stored in your knowledge base. You don't need to reference Company Brain explicitly in every message — it works in the background.
+
+For example, try a prompt like:
+
+```text
+Draft a customer email about our refund policy.
+```
+
+ChatGPT will automatically retrieve your refund policy facts and use them in the response, keeping the tone and specifics consistent with what your team has approved.
+
+Other prompts that work well with Company Brain context active:
+
+```text
+Write a LinkedIn post about our new product launch.
+```
+
+```text
+Summarise our core value proposition in two sentences.
+```
+
+```text
+What are the key features we highlight in sales calls?
+```
+
+## Known Limitations
+
+<Warning>
+  ChatGPT connector and MCP support is actively evolving. If you don't see a **Connectors** or **Tools** option in your Settings, your current plan or region may not yet support it. Check the [ChatGPT release notes](https://help.openai.com/en/articles/6825453-chatgpt-release-notes) for the latest availability information. For immediate MCP support today, **Claude Desktop** and **Cursor** both have stable, production-ready MCP integrations — see their setup guides in this section.
+</Warning>

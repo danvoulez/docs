@@ -1,47 +1,104 @@
 ---
-title: "Quickstart"
-description: "Begin with a guide on the fastest path to a successful outcome"
+title: "Get Started with Company Brain in Minutes"
+sidebarTitle: "Quickstart"
+description: "Sign up for Company Brain, add your first Company Facts, connect your MCP endpoint, and get AI-powered context flowing to your team in under 10 minutes."
 ---
 
-Describe how someone begins using your product. What is the first thing they need to do? Are there any prerequisites?
-
-A quickstart should take someone from zero to using your product. They'll get a quick win and a sense of what they can accomplish.
-
-## Prerequisites
-
-Before you begin, you must have:
-
-- Requirement one (for example, Node.js 18+, a free account, an API key)
-- Requirement two (for example, a compatible device, a compatible browser, a compatible operating system)
-
-## Get started
+This guide walks you through everything from requesting access to sending your first context-aware AI message. By the end, your AI tool will answer questions about your company's products, policies, and brand voice without you pasting a single line of background — because Company Brain will already have delivered it.
 
 <Steps>
-  <Step title="Install">
-    Describe how to install your product or sign up.
+  <Step title="Request Early Access">
+    Visit [company-brain.ai/waitlist](https://www.company-brain.ai/waitlist) and fill in your company details. Select the plan that best matches your team size and intended use — Free, Pro, or Team.
 
-    ```bash
-    npm install your-package
-    ```
+    <Note>
+      Early Access is open now. Most applications are reviewed and approved within **1 business day**. You'll receive a confirmation email with your login link as soon as your workspace is ready.
+    </Note>
   </Step>
-  <Step title="Configure">
-    Describe any setup or configuration needed before first use.
 
-    ```bash
-    your-cli init
-    ```
+  <Step title="Set Up Your Workspace">
+    After approval, log in at [company-brain.ai/login](https://www.company-brain.ai/login). You'll be prompted to complete your company profile:
+
+    - **Company name** — used to label your knowledge base and MCP endpoint
+    - **Industry** — helps Company Brain suggest relevant fact categories to get you started
+    - **Primary AI tools** — select the clients your team uses most (Claude, ChatGPT, Cursor, Copilot) so we can surface the right setup guides
   </Step>
-  <Step title="Run it">
-    Show the first thing a user does to see it working.
 
-    ```bash
-    your-cli start
+  <Step title="Add Your First Company Facts">
+    Navigate to the **Facts** dashboard and click **Add Fact**. A Company Fact is any piece of information you want your AI tools to know about your business. Start with the context you find yourself pasting most often.
+
+    Here are three types of facts to add first:
+
+    - **Product names** — e.g., *"Our flagship product is called Horizon. It is a project management platform for distributed engineering teams."*
+    - **Brand voice** — e.g., *"Our tone is professional but approachable. We avoid jargon, use short sentences, and write in second person."*
+    - **Policy** — e.g., *"Our standard payment terms are net-30 from the date of invoice."*
+
+    <Tip>
+      Start with **10–20 high-impact facts** — specifically the context you paste most often into AI chats. You can expand your knowledge base over time. A focused, accurate library beats a large, patchy one every time.
+    </Tip>
+  </Step>
+
+  <Step title="Connect Your AI Tool">
+    Navigate to **Settings → MCP Connector** to find your unique MCP endpoint URL. It looks like this:
+
     ```
+    https://mcp.company-brain.ai/YOUR_ORG_ID
+    ```
+
+    Add this endpoint to your AI tool's configuration file. Replace `YOUR_ORG_ID` with the value shown in your dashboard.
+
+    <CodeGroup>
+      ```json Claude Desktop (claude_desktop_config.json)
+      {
+        "mcpServers": {
+          "company-brain": {
+            "url": "https://mcp.company-brain.ai/YOUR_ORG_ID",
+            "transport": "http"
+          }
+        }
+      }
+      ```
+
+      ```json Cursor (.cursor/mcp.json)
+      {
+        "mcpServers": {
+          "company-brain": {
+            "url": "https://mcp.company-brain.ai/YOUR_ORG_ID",
+            "transport": "http"
+          }
+        }
+      }
+      ```
+    </CodeGroup>
+
+    Save the file and restart your AI tool to apply the change. You only need to do this once per client — all future sessions will pick up the endpoint automatically.
+  </Step>
+
+  <Step title="Test It">
+    Open your AI tool and start a new session. Ask it something that requires knowledge of your Company Facts — for example:
+
+    - *"What is our brand voice?"*
+    - *"What are our standard payment terms?"*
+    - *"Describe our flagship product."*
+
+    Your AI tool should answer accurately using the facts you added in Step 3. If the response looks right, you're fully set up. If not, double-check that the MCP endpoint URL in your config matches the value in **Settings → MCP Connector**.
   </Step>
 </Steps>
 
-<Tip>
-  Give people a way to get help. This could be a link to a support page, a chat with a customer support agent, or a forum for your product.
+## Next Steps
 
-  Example: Need help? Reach out to us at [support@yourcompany.com](mailto:support@yourcompany.com).
-</Tip>
+Now that your first facts are live and your AI tool is connected, here's where to go next.
+
+<CardGroup cols={2}>
+  <Card title="Writing Effective Facts" icon="pen" href="/company-facts/writing-facts">
+    Learn how to write clear, precise Company Facts that give AI tools exactly the context they need
+  </Card>
+  <Card title="MCP Integration Guide" icon="plug" href="/integrations/mcp-overview">
+    Explore the full integration options for Claude, ChatGPT, Copilot, and Cursor
+  </Card>
+  <Card title="Manage Your Team" icon="users" href="/team/curators">
+    Set up Curators and configure your fact review workflow
+  </Card>
+  <Card title="Plans & Billing" icon="credit-card" href="/plans/overview">
+    Compare Free, Pro, and Team plans and find the right fit
+  </Card>
+</CardGroup>

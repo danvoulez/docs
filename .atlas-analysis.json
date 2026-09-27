@@ -1,0 +1,80 @@
+{
+  "projectType": "saas",
+  "projectName": "Company Brain",
+  "projectDescription": "Company Brain is an AI context layer that stores your company's facts, rules, tone, and strategy, and automatically delivers that context to AI tools like Claude, ChatGPT, Copilot, and Cursor via the MCP standard.",
+  "theme": "almond",
+  "primaryColor": "#ef7025",
+  "lightColor": "#eec9bc",
+  "darkColor": "#4fa1ab",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "how-it-works"
+            ]
+          },
+          {
+            "group": "Company Facts",
+            "pages": [
+              "company-facts/overview",
+              "company-facts/writing-facts",
+              "company-facts/business-rules",
+              "company-facts/brand-voice"
+            ]
+          },
+          {
+            "group": "MCP & Integrations",
+            "pages": [
+              "integrations/mcp-overview",
+              "integrations/claude",
+              "integrations/chatgpt",
+              "integrations/copilot",
+              "integrations/cursor"
+            ]
+          },
+          {
+            "group": "Team Management",
+            "pages": [
+              "team/curators",
+              "team/review-workflow",
+              "team/onboarding"
+            ]
+          },
+          {
+            "group": "Plans & Billing",
+            "pages": [
+              "plans/overview",
+              "plans/faq"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Company Facts store — a curated library of company context including products, terminology, brand voice, policies, and strategy",
+    "MCP Connector — one endpoint that plugs into any MCP-compatible AI tool so all sessions inherit company context automatically",
+    "Multi-AI compatibility — works with Claude, ChatGPT, GitHub Copilot, Cursor, and any MCP-capable tool",
+    "Curator role — designated team members review and approve facts before they go live",
+    "Business rules & policies — store pricing rules, compliance requirements, and approval thresholds for AI to inherit",
+    "Strategy layer — quarterly goals and priorities embedded in context so AI output aligns with company direction",
+    "Automated knowledge updates — Pro/Team plans include agents that monitor sources and keep facts current",
+    "Weekly digest — team receives a summary of knowledge base changes",
+    "Shared team context — every team member works from the same approved baseline, eliminating version drift",
+    "Per-company pricing — full MCP access for the whole team on every plan, no per-seat fees"
+  ],
+  "publicApiSurface": [
+    "MCP endpoint — configure once in any MCP-compatible AI client to inject company context",
+    "Company Facts CRUD — create, edit, review, and publish company facts via the dashboard",
+    "Curator workflow — submit facts for review, approve or reject, publish to team",
+    "Automated agents — Pro/Team plan agents that pull from monitored sources and draft new facts",
+    "Integration guides — per-tool setup for Claude, ChatGPT, Copilot, and Cursor",
+    "Weekly digest — automated summary of fact changes delivered to the team"
+  ]
+}

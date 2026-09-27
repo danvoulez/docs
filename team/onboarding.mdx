@@ -1,0 +1,83 @@
+---
+title: "Onboard Your Team to Company Brain"
+sidebarTitle: "Team Onboarding"
+description: "Get your whole team using Company Brain. Invite members, share the MCP endpoint, and help new hires ramp up quickly with your shared company knowledge base."
+---
+
+Getting your team onto Company Brain takes about 15 minutes. Everyone gets full MCP access on every plan — there are no per-seat costs, so inviting your entire team costs nothing extra. This guide walks you through inviting team members, distributing the MCP endpoint, and using Company Brain as a living onboarding assistant for new hires.
+
+## Inviting Team Members
+
+<Steps>
+  <Step title="Open the Invite Screen">
+    Go to **Settings > Team Members > Invite** in your Company Brain dashboard.
+  </Step>
+  <Step title="Enter Email Addresses">
+    Type in one or more email addresses. For bulk invites, separate addresses with commas — you can invite your entire team in a single action.
+  </Step>
+  <Step title="Assign a Role">
+    Choose a role for the invitees:
+    - **Member** — can view published facts and draft new ones for Curator review.
+    - **Curator** — can review, approve, edit, and publish facts. See the [Curators guide](/team/curators) to decide who should have this role.
+  </Step>
+  <Step title="Send the Invites">
+    Click **Send Invites**. Each invitee receives an email with a personalised signup link. They'll be joined to your workspace as soon as they complete signup — no further action needed from you.
+  </Step>
+</Steps>
+
+## Sharing the MCP Endpoint
+
+Your MCP endpoint URL is a single address shared by your entire team — there are no individual per-user endpoints. The easiest way to distribute it is to include it in your team's onboarding documentation, Notion wiki, or a pinned Slack message.
+
+Find your endpoint URL at **Settings > Integrations > MCP Endpoint**.
+
+Here's a Slack message template you can copy and adapt:
+
+```text
+Hey team! We're now using Company Brain to give our AI tools full company context. 
+Add this MCP endpoint to your AI tool of choice:
+https://mcp.company-brain.ai/YOUR_ORG_ID
+
+Setup guides:
+- Claude: https://docs.company-brain.ai/integrations/claude
+- Cursor: https://docs.company-brain.ai/integrations/cursor
+- Copilot: https://docs.company-brain.ai/integrations/copilot
+```
+
+Replace `YOUR_ORG_ID` with the value shown in your dashboard. Each team member configures the endpoint once in their AI tool of choice — after that, every session automatically inherits your full company context.
+
+## Using Company Brain for New Hire Onboarding
+
+One of Company Brain's most powerful use cases is new hire onboarding. Once a new hire configures the MCP endpoint in their AI tool, they can ask natural language questions and get accurate, approved answers drawn directly from your knowledge base — on day one, without waiting for a colleague to have time to walk them through things.
+
+Encourage new hires to start with questions like:
+
+- *"What does our company do?"*
+- *"What's our brand voice and tone?"*
+- *"What are our standard contract terms?"*
+- *"Who owns decisions about product roadmap?"*
+- *"What tools do we use for project management?"*
+
+Every answer comes from facts your team has already reviewed and approved — so new hires get consistent, reliable information rather than whatever happens to be in someone's memory that day.
+
+<Tip>
+  Think of Company Brain as a 24/7 onboarding assistant. New hires in different time zones, contractors starting on a weekend, or part-timers who need to ramp up gradually can all self-serve accurate company knowledge without blocking a colleague.
+</Tip>
+
+## Contractor Access
+
+Contractors can use the same MCP endpoint as your full-time team. Because MCP access is tied to the endpoint URL rather than individual user accounts, there's nothing to provision — just share the endpoint URL with the contractor along with the relevant setup guide for their AI tool.
+
+<Note>
+  If you offboard a contractor and want to revoke their access, go to **Settings > Security** and rotate your MCP endpoint key. This immediately invalidates the old URL. Share the new endpoint URL with your active team members so they can update their AI tool configurations.
+</Note>
+
+## Encouraging Contributions
+
+A knowledge base is only as good as the effort your team puts into keeping it current. Here are three practical ways to build a culture of contribution:
+
+**Run monthly knowledge sprints.** Once a month, open a Slack thread or short meeting where anyone can nominate new facts to add. This lowers the activation energy — instead of expecting individuals to contribute on their own initiative, you create a shared ritual around it.
+
+**Add Company Brain to your definition of done.** For every product launch, policy change, or major decision, include "update the relevant Company Facts" as a required step before marking the work complete. This ensures your knowledge base evolves in sync with your company, rather than falling behind.
+
+**Celebrate great AI answers.** When a team member notices their AI tool gave an exceptionally useful, accurate response — one that traces back to a fact a colleague contributed — call it out. A quick "shoutout to [name] for adding that fact!" in Slack reinforces that contributions have real, visible impact and makes the knowledge base feel like a shared team asset rather than an admin chore.

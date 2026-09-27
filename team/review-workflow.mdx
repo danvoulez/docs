@@ -1,0 +1,78 @@
+---
+title: "How the Company Facts Review Workflow Works"
+sidebarTitle: "Review Workflow"
+description: "Learn how Company Facts move from draft to live through the review workflow, and how Curators approve, edit, and publish facts for the whole team."
+---
+
+Company Brain uses a lightweight review workflow to ensure every fact that reaches your team's AI tools is accurate and approved. Any team member can contribute facts — Curators are the gatekeepers who verify quality before facts go live. This keeps your knowledge base trustworthy without creating a bottleneck.
+
+## Fact Lifecycle
+
+Every Company Fact moves through a defined set of stages from creation to retirement.
+
+<Steps>
+  <Step title="Draft">
+    Any team member creates a fact and saves it as a draft. The draft is only visible to the author and Curators — it hasn't entered the review queue yet and won't affect AI tool responses.
+  </Step>
+  <Step title="Submitted for Review">
+    The author clicks **Submit for Review**. All Curators receive an email notification, and the fact appears in the **Review Queue** on the dashboard.
+  </Step>
+  <Step title="Under Review">
+    A Curator opens the fact, reads it, and either approves it, edits it before approving, or requests changes with a message back to the contributor.
+  </Step>
+  <Step title="Live">
+    Once a Curator approves the fact, it becomes **Live** immediately. It is now delivered to every team member's AI tools via the MCP connector — no further action needed from contributors or Curators.
+  </Step>
+  <Step title="Archived">
+    When a fact is no longer accurate, a Curator archives it. Archived facts are removed from AI context so they won't mislead your tools, but they remain fully searchable in your fact history for auditing and reference.
+  </Step>
+</Steps>
+
+## For Contributors
+
+Regular team members — anyone without the Curator role — submit facts through a simple three-step process:
+
+1. **Write a clear, specific fact.** Avoid vague or overly broad statements. The more precise the fact, the more useful it is to AI tools. See the [Writing Facts guide](/company-facts/writing-facts) for examples.
+2. **Choose the right category.** Pick the category that best describes the fact (Brand & Communication, Policies & Rules, Products & Services, or Strategy). This helps Curators route and prioritise their queue.
+3. **Submit with a note.** When you click **Submit for Review**, add a short note to the Curator explaining why you're adding the fact and what prompted it.
+
+<Tip>
+  Include a source link or reference in your submission note — for example, a Confluence page, a Slack thread, or a contract document. This gives the Curator everything they need to verify the fact without chasing you down, which means faster approval for you.
+</Tip>
+
+## For Curators
+
+Your review dashboard is your primary workspace. Here's how to use it effectively.
+
+**Finding the review queue:** Navigate to **Dashboard > Review Queue**. Facts appear in the order they were submitted, with the oldest at the top. Each entry shows the fact content, the submitting team member, the category, and any submission note.
+
+**Approving in bulk:** When you have a batch of straightforward, similar facts — such as a set of product feature descriptions from a product launch — select them using the checkboxes and click **Approve Selected**. Bulk approval is best for facts you've already discussed with the contributor in advance.
+
+**Reviewing individually:** For facts that need careful reading or editing, click through to the individual fact view. You can edit the content directly, leave an internal note, and then approve — all in one step.
+
+**Requesting changes:** If a fact needs significant rework, click **Request Changes** and type a message to the contributor. They'll receive an email notification with your feedback and can revise the draft before resubmitting.
+
+<Note>
+  You can edit a fact directly before approving it — there's no need to reject it and ask the contributor to resubmit for minor wording changes. Save the **Request Changes** flow for situations where the contributor needs to rethink the content or gather more information.
+</Note>
+
+## Automated Facts (Pro & Team)
+
+On Pro and Team plans, automated agents continuously monitor your configured sources — internal wikis, product docs, web pages — and draft new facts when they detect relevant information. These agent-drafted facts appear in the **Review Queue** exactly like contributor submissions.
+
+Curators review automated drafts using the same workflow: read, optionally edit, then approve or discard. Automated facts are clearly labelled with their source so you always know where the information came from.
+
+<Info>
+  Automation drafts facts — humans approve them. No automated fact ever goes live without a Curator's explicit approval. This keeps you in full control of what your AI tools know, even as your knowledge base scales.
+</Info>
+
+## Notifications
+
+Company Brain sends targeted notifications to the right people at each stage of the workflow.
+
+| Event | Who is notified |
+|-------|----------------|
+| Fact submitted for review | All Curators (email) |
+| Fact approved and live | Submitting contributor (email) |
+| Changes requested | Submitting contributor (email) |
+| Weekly knowledge digest | All team members (email) |

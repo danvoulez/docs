@@ -1,0 +1,85 @@
+---
+title: "Connect Company Brain to Claude Desktop and Claude.ai"
+sidebarTitle: "Claude"
+description: "Add your Company Brain MCP endpoint to Claude Desktop or Claude.ai so every Claude conversation automatically includes your company context."
+---
+
+Claude supports the Model Context Protocol natively in both Claude Desktop and Claude.ai, making it one of the most straightforward AI tools to connect to Company Brain. Once you add your MCP endpoint, every Claude conversation — from drafting emails to answering policy questions — will automatically draw on your curated company knowledge without any extra prompting from you.
+
+## Prerequisites
+
+<Note>
+  Before you begin, make sure you have:
+  - A Company Brain account on any plan
+  - Claude Desktop installed, **or** a Claude.ai Pro or Team subscription (connector support requires a paid Claude.ai plan)
+  - Your MCP endpoint URL, found in **Settings > MCP Connector** in your Company Brain dashboard
+</Note>
+
+## Claude Desktop Setup
+
+<Steps>
+  <Step title="Open the Claude Desktop config file">
+    Launch Claude Desktop and go to **Settings > Developer > Edit Config**. This opens the `claude_desktop_config.json` file in your default text editor.
+  </Step>
+  <Step title="Add the Company Brain MCP server">
+    Add a `company-brain` entry inside the `mcpServers` object. If the file is empty, paste in the full structure below.
+
+    ```json claude_desktop_config.json
+    {
+      "mcpServers": {
+        "company-brain": {
+          "url": "https://mcp.company-brain.ai/YOUR_ORG_ID",
+          "transport": "http"
+        }
+      }
+    }
+    ```
+
+    Replace `YOUR_ORG_ID` with the identifier from your Company Brain dashboard. If you already have other MCP servers configured, add the `company-brain` block alongside them inside `mcpServers`.
+  </Step>
+  <Step title="Save the file and restart Claude Desktop">
+    Save `claude_desktop_config.json` and quit Claude Desktop completely, then relaunch it. Claude loads MCP server configuration on startup, so a full restart is required.
+  </Step>
+  <Step title="Confirm the connection">
+    Open a new conversation in Claude Desktop. Look for the **Company Brain** connector icon in the conversation toolbar. Its presence confirms that Claude has successfully connected to your MCP endpoint and your Company Facts are available.
+  </Step>
+</Steps>
+
+## Claude.ai (Web) Setup
+
+<Steps>
+  <Step title="Open your Claude.ai account settings">
+    Sign in to [claude.ai](https://claude.ai) and click your profile picture in the top-right corner, then select **Settings**.
+  </Step>
+  <Step title="Navigate to Integrations or Connectors">
+    Look for an **Integrations**, **Connectors**, or **MCP** section in the left-hand menu. The exact label may vary depending on your plan and the current Claude.ai release.
+  </Step>
+  <Step title="Add your Company Brain endpoint">
+    Click **Add MCP server** or **Add connector** and enter your endpoint URL:
+
+    ```text
+    https://mcp.company-brain.ai/YOUR_ORG_ID
+    ```
+
+    Give the connection a name — `company-brain` works well — and save.
+  </Step>
+  <Step title="Start a new conversation">
+    Open a fresh conversation on Claude.ai. Your Company Facts are now available. Claude will draw on them automatically when they are relevant to your query.
+  </Step>
+</Steps>
+
+## Testing the Connection
+
+Ask Claude a question that only your Company Facts can answer, for example:
+
+- *"What is our company's brand voice?"*
+- *"What are our standard payment terms?"*
+- *"Who is our target customer?"*
+
+Claude should respond using the specific details from your knowledge base rather than giving a generic answer. If it replies that it doesn't have that information, check that the relevant facts have **Live** status in your Company Brain dashboard.
+
+## Tips for Claude
+
+<Tip>
+  At the start of a complex session, open with a short instruction like: *"Use my company context for everything in this conversation."* This signals to Claude to actively reference your Company Facts throughout, which is especially helpful for longer tasks like drafting documents or building out content strategies.
+</Tip>
